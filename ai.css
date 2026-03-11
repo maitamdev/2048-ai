@@ -206,6 +206,17 @@
   box-shadow: 0 8px 18px rgba(255, 134, 128, 0.4);
 }
 
+.ai-btn-secondary {
+  background: linear-gradient(135deg, #6c63ff, #8b5dff) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3) !important;
+  min-width: 110px;
+}
+
+.ai-btn-secondary:hover {
+  box-shadow: 0 18px 30px rgba(108, 99, 255, 0.45) !important;
+}
+
 .ai-stats {
   display: flex;
   gap: 10px;

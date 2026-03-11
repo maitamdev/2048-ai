@@ -135,6 +135,16 @@ toggleAI = startAI;
 
 document.querySelector("#ai-step").addEventListener('click', () => step())
 document.querySelector("#ai-start").addEventListener('click', () => toggleAI())
+document.querySelector("#new-game-btn").addEventListener('click', () => {
+  if (aiRunning) stopAI();
+  window.requestAnimationFrame(() => {
+    game.restart();
+    game.actuator.clearMessage();
+    if (statMoves) statMoves.textContent = "0";
+    if (statTime) statTime.textContent = "0.0s";
+    if (statSpeed) statSpeed.textContent = "0 m/s";
+  });
+});
 
 // Keyboard shortcuts: Space = toggle AI, S = one step, N = new game
 document.addEventListener('keydown', (e) => {
