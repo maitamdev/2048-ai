@@ -171,3 +171,22 @@ retryButton.onclick = function(e) {
     setTimeout(showGithubFollowPrompt, 50);
   }
 };
+
+// Theme toggle with localStorage persistence
+const themeToggle = document.getElementById("theme-toggle");
+const body = document.body;
+const savedTheme = localStorage.getItem("2048-theme");
+
+if (savedTheme === "light") {
+  body.classList.add("light-theme");
+  if (themeToggle) themeToggle.textContent = "☀️";
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light-theme");
+    const isLight = body.classList.contains("light-theme");
+    themeToggle.textContent = isLight ? "☀️" : "🌙";
+    localStorage.setItem("2048-theme", isLight ? "light" : "dark");
+  });
+}
