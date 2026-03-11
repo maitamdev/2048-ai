@@ -136,6 +136,28 @@ toggleAI = startAI;
 document.querySelector("#ai-step").addEventListener('click', () => step())
 document.querySelector("#ai-start").addEventListener('click', () => toggleAI())
 
+// Keyboard shortcuts: Space = toggle AI, S = one step, N = new game
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  switch (e.code) {
+    case 'Space':
+      e.preventDefault();
+      toggleAI();
+      break;
+    case 'KeyS':
+      if (!aiRunning) step();
+      break;
+    case 'KeyN':
+      if (!aiRunning) {
+        window.requestAnimationFrame(() => {
+          game.restart();
+          game.actuator.clearMessage();
+        });
+      }
+      break;
+  }
+});
+
 // Add GitHub follow prompt after the game's retry functionality
 const retryButton = document.querySelector('.retry-button');
 const originalClick = retryButton.onclick;
