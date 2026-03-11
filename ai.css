@@ -206,6 +206,40 @@
   box-shadow: 0 8px 18px rgba(255, 134, 128, 0.4);
 }
 
+.ai-stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 8px;
+  background: rgba(20, 16, 32, 0.85);
+  border: 1px solid rgba(137, 96, 255, 0.22);
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(10, 6, 20, 0.3);
+}
+
+.stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(160, 243, 255, 0.8);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-family: "Press Start 2P", monospace;
+  font-size: 14px;
+  color: #ffb86b;
+  text-shadow: 0 0 8px rgba(255, 184, 107, 0.4);
+}
+
 .game-container {
   border-radius: 22px;
   box-shadow: 0 14px 32px rgba(14, 10, 26, 0.45);

@@ -18,6 +18,19 @@ let working = 0;
 let bestMove, bestResult;
 let startTime, totalMove;
 let githubModalShown = false;
+let statsInterval = null;
+
+const statMoves = document.getElementById("stat-moves");
+const statTime = document.getElementById("stat-time");
+const statSpeed = document.getElementById("stat-speed");
+
+function updateStats() {
+  if (!startTime) return;
+  const elapsed = (Date.now() - startTime) / 1000;
+  if (statMoves) statMoves.textContent = totalMove;
+  if (statTime) statTime.textContent = elapsed.toFixed(1) + "s";
+  if (statSpeed) statSpeed.textContent = (elapsed > 0 ? (totalMove / elapsed).toFixed(0) : "0") + " m/s";
+}
 
 const githubModal = document.getElementById("github-modal");
 const githubModalOverlay = document.getElementById("github-modal-overlay");
@@ -105,7 +118,7 @@ function startAI() {
   aiRunning = true;
   step();
   toggleAI = stopAI;
-
+  statsInterval = setInterval(updateStats, 200);
 }
 
 function stopAI() {
@@ -114,6 +127,8 @@ function stopAI() {
   document.getElementsByClassName("ai-buttons")[1].textContent = "Start AI";
   aiRunning = false;
   toggleAI = startAI;
+  if (statsInterval) { clearInterval(statsInterval); statsInterval = null; }
+  updateStats();
 }
 
 toggleAI = startAI;
