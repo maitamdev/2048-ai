@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
     <meta charset="utf-8">
-    <title>2048 AI by Ishan</title>
+    <title>2048 AI — Expectimax AI plays 2048 in your browser</title>
+    <meta name="description" content="Watch an Expectimax AI conquer 2048 in real-time. Runs entirely in your browser using WebAssembly and Web Workers — no server required.">
+    <meta name="theme-color" content="#201a36">
+    <meta property="og:title" content="2048 AI — Expectimax AI plays 2048">
+    <meta property="og:description" content="An AI that can reach 32768 tile, running in parallel with WebAssembly right in your browser.">
+    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,8 +56,8 @@
           </div>
           <div class="ai-menu">
             <p class="game-intro">AI controls</p>
-            <a class="ai-buttons" id="ai-step">One Step</a>
-            <a class="ai-buttons" id="ai-start">Start AI</a>
+            <a class="ai-buttons" id="ai-step" role="button" aria-label="Execute one AI move">One Step</a>
+            <a class="ai-buttons" id="ai-start" role="button" aria-label="Start or stop the AI">Start AI</a>
           </div>
 
           <div class="game-container">
