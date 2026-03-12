@@ -15,11 +15,18 @@ The AI can reach **16384** most of the time and sometimes even reach **32768**.
 
 - 🤖 **Expectimax AI** — Searches deep game trees to find optimal moves
 - ⚡ **WebAssembly + Web Workers** — Parallel search across 4 threads for maximum speed
-- 📊 **Real-time Stats** — Live moves/sec, total moves, and elapsed time display
+- 📊 **Real-time Stats** — Live moves/sec, total moves, elapsed time, and best tile display
 - 🎨 **Dark/Light Theme** — Toggle between themes with localStorage persistence
-- ⌨️ **Keyboard Shortcuts** — `Space` (toggle AI), `S` (one step), `N` (new game)
+- ⌨️ **Keyboard Shortcuts** — `Space` (toggle AI), `S` (one step), `N` (new game), `M` (mute)
 - 📱 **Responsive Design** — Works on desktop, tablet, and mobile
 - 🌐 **SEO Optimized** — Proper meta tags, Open Graph, and accessibility (ARIA)
+- 🎉 **Confetti Celebrations** — Particle confetti explosions on milestone tiles (2048, 4096, 8192…)
+- ✨ **Animated Tile Glow** — High-value tiles (1024+) pulsate with dynamic glow effects
+- ⚡ **AI Speed Slider** — Control the delay between AI moves in real-time (0ms–500ms)
+- 🏆 **Best Tile Tracker** — Tracks highest tile achieved, persisted across sessions
+- 🔊 **Sound Effects** — Merge sounds & milestone chimes via Web Audio API (no files needed)
+- 📜 **Game History** — Records the last 5 game sessions with score, tile, moves, and time
+- 🌌 **Background Particles** — Floating glowing orbs for a cyberpunk atmosphere
 
 ---
 
@@ -99,7 +106,9 @@ make web
 | `Space` | Start / Stop AI |
 | `S` | Execute one AI step |
 | `N` | New Game |
+| `M` | Toggle Sound |
 | `←↑↓→` | Manual play |
+| `Esc` | Close modal |
 
 ---
 
@@ -111,7 +120,7 @@ make web
 ├── main.js         # Game controller & AI orchestration
 ├── ai.js           # WebAssembly module (compiled from C++)
 ├── ai.wasm         # WebAssembly binary
-├── ai.css          # Styling (dark/light themes)
+├── ai.css          # Styling (dark/light themes, effects)
 ├── cpp/            # C++ source code
 │   ├── 2048.cpp       # Console application
 │   ├── 2048-web.cpp   # Web worker entry point

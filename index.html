@@ -33,6 +33,7 @@
         <a href="https://ishandutta2007.github.io/#works" class="navbar-link">Projects</a>
         <a href="https://ishandutta2007.github.io/#posts" class="navbar-link">Posts</a>
         <a href="https://ishandutta2007.github.io/about/" class="navbar-link">About</a>
+        <button class="sound-toggle" id="sound-toggle" aria-label="Toggle sound effects" title="Toggle sound">🔊</button>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">🌙</button>
       </div>
     </nav>
@@ -60,6 +61,11 @@
             <a class="ai-buttons" id="ai-step" role="button" aria-label="Execute one AI move">One Step</a>
             <a class="ai-buttons" id="ai-start" role="button" aria-label="Start or stop the AI">Start AI</a>
             <a class="ai-buttons ai-btn-secondary" id="new-game-btn" role="button" aria-label="Start a new game">New Game</a>
+            <div class="speed-control">
+              <span class="speed-label">Speed</span>
+              <input type="range" id="speed-slider" min="0" max="500" value="0" step="10" aria-label="AI move delay in milliseconds">
+              <span class="speed-value" id="speed-value">0ms</span>
+            </div>
           </div>
 
           <div class="ai-stats" id="ai-stats" aria-live="polite">
@@ -74,6 +80,10 @@
             <div class="stat-item">
               <span class="stat-label">Speed</span>
               <span class="stat-value" id="stat-speed">0 m/s</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Best Tile</span>
+              <span class="stat-value" id="stat-best-tile">0</span>
             </div>
           </div>
 
@@ -129,6 +139,12 @@
               <p>Spin up the AI or take the wheel yourself. Stack combos, ride the chain reactions, and push the score multiplier sky high.</p>
             </div>
           </div>
+          <div class="history-card" id="history-card">
+            <h2>📜 History</h2>
+            <ul class="history-list" id="history-list">
+              <li class="history-empty">No games played yet</li>
+            </ul>
+          </div>
           <div class="game-extras">
             <p class="game-explanation">
               <strong class="important">Controls:</strong> Use your <strong>arrow keys</strong> to slide every tile. Combine equal tiles to level up the board.
@@ -156,6 +172,23 @@
       </div>
     </div>
     <div id="github-modal-overlay" class="github-modal-overlay" aria-hidden="true"></div>
+
+    <canvas id="particles-canvas"></canvas>
+    <canvas id="confetti-canvas"></canvas>
+
+    <footer class="site-footer">
+      <div class="footer-shortcuts">
+        <span class="footer-shortcut"><kbd>Space</kbd> Toggle AI</span>
+        <span class="footer-shortcut"><kbd>S</kbd> One Step</span>
+        <span class="footer-shortcut"><kbd>N</kbd> New Game</span>
+        <span class="footer-shortcut"><kbd>M</kbd> Mute</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/maitamdev" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/maitamdev/2048-ai" target="_blank" rel="noopener noreferrer">Source Code</a>
+      </div>
+      <p>Made with <span class="footer-heart">❤️</span> by <strong>maitamdev</strong></p>
+    </footer>
 
   </body>
 </html>
